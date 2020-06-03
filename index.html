@@ -22,7 +22,7 @@
         <div id="text">
             <div id="code">                 
             <span class="say">亲爱的，我们一起度过了许多个日日夜夜，</span><br>
-            <span class="say">学校里、街道上都有我们留下的痕迹，</span><br>
+            <span class="say">学校里，街道上都有我们留下的痕迹，</span><br>
             <span class="say">我的脑海里都是我们的回忆，是那么的耐人寻味。</span><br>
             <span class="say">愿意为你去做每一件能让你开心的事情，</span><br>
             <span class="say">喜欢看你笑，你的快乐是我的追求，</span><br>
@@ -36,8 +36,7 @@
             <span class="say">穿越了，千个万个，时间线里，人海里相依。</span><br>
             <span class="say">我会成为那个可以让你依靠的人，</span><br>
             <span class="say">营造出属于我们的家。</span><br>
-            <span class="say">I'll be with you, and stand by your</span><br>
-            <span class="say">side for evermore！</span><br>
+            <span class="say">I'll be with you, and stand by your side for evermore！</span><br>
             <span class="say"><span class="space"></span> -- Yours, 土豆土豆我是地瓜.</span>
             </div>
         </div>
@@ -1197,18 +1196,18 @@
         var hold = 1;
 
         canvas.click(function(e) {
-            //自动播放音乐
-            var music = document.getElementById("music");//获取ID
-            if (music.paused) { //判读是否播放
-              music.currentTime = 20;
-              music.paused=false;
-              music.play(); //没有就播放 
-            }
-
             var offset = canvas.offset(), x, y;
             x = e.pageX - offset.left;
             y = e.pageY - offset.top;
             if (seed.hover(x, y)) {
+              //自动播放音乐
+              var music = document.getElementById("music");//获取ID
+              if (music.paused) { //判读是否播放
+                music.currentTime = 20;
+                music.paused=false;
+                music.play(); //没有就播放 
+              }
+
                 hold = 0; 
                 canvas.unbind("click");
                 canvas.unbind("mousemove");
