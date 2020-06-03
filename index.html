@@ -21,7 +21,23 @@
     <div id="wrap">
         <div id="text">
             <div id="code">                 
-            <span class="say">我的爱人</span><br>
+            <span class="say">亲爱的，我们一起度过了许多个日日夜夜，</span><br>
+            <span class="say">学校里、街道上都有我们留下的痕迹，</span><br>
+            <span class="say">我的脑海里都是我们的回忆，是那么的耐人寻味。</span><br>
+            <span class="say">愿意为你去做每一件能让你开心的事情，</span><br>
+            <span class="say">喜欢看你笑，你的快乐是我的追求，</span><br>
+            <span class="say">每当此时都会有一股暖流流入心间，拨动我的心弦。</span><br>
+            <span class="say">我会带你去许多地方，留下我们的足迹，</span><br>
+            <span class="say">留下更多属于我们美好的回忆。</span><br>
+            <span class="say">我期待一生与你一起走过，</span><br>
+            <span class="say">执子之手，与子偕老！</span><br>
+            <span class="say">就像是歌声所说：</span><br>
+            <span class="say">想见你，只想见你，未来过去，我只想见你，</span><br>
+            <span class="say">穿越了，千个万个，时间线里，人海里相依。</span><br>
+            <span class="say">我会成为那个可以让你依靠的人，</span><br>
+            <span class="say">营造出属于我们的家。</span><br>
+            <span class="say">I'll be with you, and stand by your</span><br>
+            <span class="say">side for evermore！</span><br>
             <span class="say"><span class="space"></span> -- Yours, 土豆土豆我是地瓜.</span>
             </div>
         </div>
@@ -31,8 +47,8 @@
         </div>
         <canvas id="canvas" width="1100" height="680"></canvas>
     </div>
-    <audio src="missyou.mp3" autoplay="autoplay"></audio>
   </div>
+  <audio id="music" src="./missyou.mp3"></audio>
 
   <!-- sakura shader -->
   <script id="sakura_point_vsh" type="x-shader/x_vertex">
@@ -1181,6 +1197,14 @@
         var hold = 1;
 
         canvas.click(function(e) {
+            //自动播放音乐
+            var music = document.getElementById("music");//获取ID
+            if (music.paused) { //判读是否播放
+              music.currentTime = 20;
+              music.paused=false;
+              music.play(); //没有就播放 
+            }
+
             var offset = canvas.offset(), x, y;
             x = e.pageX - offset.left;
             y = e.pageY - offset.top;

@@ -39,7 +39,7 @@ $(window).resize(function() {
           $('#clock-box').fadeIn();
 					clearInterval(timer);
 				}
-			}, 66);
+			}, 75);
 		});
 		return this;
 	};
